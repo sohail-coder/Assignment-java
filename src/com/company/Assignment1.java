@@ -37,9 +37,12 @@ public class Assignment1 {
         }
     }
 }
+<<<<<<< HEAD
 /*
 ---------DOCUMENTATION----------
 we provides a hard coded path inside our program code, and iteratively we ask user for regular expression input until the user presses 0
 after having both path and regular expression we provide them as parameter to our helper functions,then the helper function opens the file, and we iterate through
 the path recursively and if the filename contains the regular expression then both the filename and the absolute path will be printed as output
  */
+=======
+>>>>>>> 9286aa8b49db3c71c8d140d78b83b3c3255751f3
