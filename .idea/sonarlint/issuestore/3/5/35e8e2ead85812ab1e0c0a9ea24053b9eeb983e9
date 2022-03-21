@@ -1,0 +1,13 @@
+
+
+java:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(Ã‚ôûÿÿÿÿ8ïºƒ™ú/
+X
+java:S1854"6Remove this useless assignment to local variable "sb".(Ã‚ôûÿÿÿÿ8òºƒ™ú/
+^
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(†ƒ†8÷ºƒ™ú/
+I
+java:S1481"'Remove this unused "sb" local variable.(Ã‚ôûÿÿÿÿ8ûºƒ™ú/
+i
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(™ï“¤8‹¼ƒ™ú/
+j
+java:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(Âú×ìûÿÿÿÿ8Œ¼ƒ™ú/
