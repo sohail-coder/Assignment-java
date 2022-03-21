@@ -10,32 +10,49 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String args[]){
         List<Student> studentList =generateList();
-        List department=studentList.stream().filter(distinctByKey(s->s.engDepartment)).map(d->d.engDepartment)
-                .collect(Collectors.toList());
+
+        List department = studentList.stream().filter(distinctByKey(s -> s.engDepartment)).map(d->d.engDepartment).collect(Collectors.toList());
         System.out.println("All departments: "+department);
+
         List names=studentList.stream().filter(s->s.year_of_enrollment>2018).map(n->n.name)
                 .collect(Collectors.toList());
         System.out.println("All students enrolled after 2018: "+names);
+
+
         List male=studentList.stream().filter(s->s.gender.equals("Male") && s.engDepartment.equals("Computer Science")).map(n->n.name)
                 .collect(Collectors.toList());
         System.out.println("All students enrolled after 2018: "+male);
+
+
         Map<String, Long> counting = studentList.stream().collect(
                 Collectors.groupingBy(s->s.gender, Collectors.counting()));
         System.out.println(counting);
+
+
         Map<String, Double> avgAge = studentList.stream().collect(
                 Collectors.groupingBy(s->s.gender, Collectors.averagingInt(s->s.age)));
         System.out.println(avgAge);
+
+
         String d=studentList.stream().collect(Collectors.maxBy(Comparator.comparing(a->a.perTillDate))).get().name;
         System.out.println(d);
+
+
         Map<String, Long> studentsByDepartment = studentList.stream().collect(
                 Collectors.groupingBy(s->s.engDepartment, Collectors.counting()));
         System.out.println(studentsByDepartment);
+
+
         Map<String, Double> avgPercentageInEachDepartment = studentList.stream().collect(
                 Collectors.groupingBy(s->s.engDepartment, Collectors.averagingDouble(s->s.perTillDate)));
         System.out.println(avgPercentageInEachDepartment);
+
+
         Map<Object, Optional<Student>> youngElectronic = studentList.stream().filter(s->s.engDepartment.equals("Electronic")).collect(
                 Collectors.groupingBy(s->s.engDepartment, Collectors.minBy(Comparator.comparing(a->a.age))));
         System.out.println(youngElectronic.get("Electronic").get().name);
+
+
         Map<String, Long> computerStudents = studentList.stream().filter(s->s.engDepartment.equals("Computer Science")).collect(
                 Collectors.groupingBy(s->s.gender, Collectors.counting()));
         System.out.println(computerStudents);
